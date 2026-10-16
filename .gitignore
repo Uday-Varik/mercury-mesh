@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local data / databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Audio and generated media
+audio/
+*.wav
+*.mp3
+*.m4a
+*.webm
+*.ogg
+*.flac
+
+# Models / large binaries
+voices/
+models/
+*.onnx
+*.bin
+*.pt
+*.pth
+
+# Conversation/runtime artifacts
+conversations/
+logs/
+tmp/
+temp/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Coverage/build
+.coverage
+htmlcov/
+dist/
+build/
