@@ -1,0 +1,14 @@
+# secrets & personal data — NEVER commit
+.env
+agents/candidate_profile.py
+*.db
+*.db-journal
+
+# python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# local demo / scratch
+/tmp/

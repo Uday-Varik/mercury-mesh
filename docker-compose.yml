@@ -1,0 +1,30 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  api:
+    build: .
+    ports: ["8000:8000"]
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_PATH: /data/mercury-mesh.db
+    volumes: ["mercury-mesh-data:/data"]
+    depends_on: [redis]
+    command: uvicorn api.server:app --host 0.0.0.0 --port 8000
+
+  voice-worker:
+    build: .
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_PATH: /data/mercury-mesh.db
+    volumes: ["mercury-mesh-data:/data"]
+    depends_on: [redis, api]
+    deploy:
+      replicas: 2   # 2 concurrent callers; raise as needed
+    command: python scripts/voice_worker.py
+
+volumes:
+  mercury-mesh-data:

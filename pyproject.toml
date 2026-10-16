@@ -1,0 +1,23 @@
+[project]
+name = "mercury-mesh"
+version = "0.1.0"
+description = "Mercury Mesh — autonomous agents that turn cold calls into interviews."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+voice = [
+    "pipecat-ai[deepgram]",
+    "twilio",
+    "redis",
+]
+dev = [
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

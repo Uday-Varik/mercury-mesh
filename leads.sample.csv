@@ -1,0 +1,4 @@
+name,title,company,phone,email,timezone,notes
+Jane Recruiter,Technical Recruiter,Acme Staffing,+15550101,jane@acme.example,America/Chicago,Hiring ML engineers
+Tom Hiring,Hiring Manager,DataCorp,+15550102,,America/New_York,ML platform team
+Priya Talent,Talent Sourcer,HireWell,+15550103,priya@hirewell.example,America/Chicago,
